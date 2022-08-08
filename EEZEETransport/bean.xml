@@ -1,0 +1,20 @@
+<!-- EEZEETransport/src/main/resources/bean.xml -->
+    <?xml version="1.0" encoding="UTF-8"?>
+    <beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+    <bean class="com.cts.eezee.model.Booking" id="booking"/>
+    <bean class="com.cts.eezee.model.Vehicle" id="vehicle">
+    <constructor-arg value="Chennai" index="0"/>
+    <constructor-arg index="1">
+    <map>
+    <entry value="1500" key="Bangalore"/>
+    <entry value="2500" key="Delhi"/>
+    <entry value="2000" key="Mumbai"/>
+    <entry value="1000" key="Hyderabad"/>
+    <entry value="2500" key="Pune"/>
+    </map>
+    </constructor-arg>
+    </bean>
+    <bean class="com.cts.eezee.service.TransportService" id="transportService">
+    <property ref="vehicle" name="vehicle"/>
+    </bean>
+    </beans>
